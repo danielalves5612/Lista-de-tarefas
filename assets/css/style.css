@@ -126,6 +126,20 @@ section.tarefa {
     border-radius: 10px;
     padding: 16px;
     margin-bottom: 24px;
+    transition: all 0.25s ease;
+    border-left: 4px solid transparent;
+}
+
+section.tarefa:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    border-left: 4px solid var(--cor-botao-nova);
+}
+
+section.tarefa.editando {
+    border-left: 4px solid #ff9800;
+    background-color: #fff8e1;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 section.tarefa:last-child {
@@ -198,6 +212,56 @@ button.button-editar {
 button.button-excluir{
     background-color: var(--cor-botao-excluir);
     color: var(--cor-card);
+}
+
+.overlay.hidden { 
+    display: none; 
+}
+
+.overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 999;
+}
+
+.modal{
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.modal h2{
+  margin-bottom: 12px;
+}
+
+.modal-acoes{
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.btn-cancelar, .btn-salvar{
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 0;
+}
+
+.btn-cancelar{ 
+    background: #ddd; 
+}
+.btn-salvar{ 
+    background: #2e7d32; 
+    color: #fff; 
 }
 
 footer{

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Tarefas</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header>
         <h1>Lista de Tarefas</h1>
@@ -17,11 +19,11 @@
                     <label for="input-titulo">Tarefa:</label>
                     <input type="text" name="input-titulo" id="input-titulo" required>
                 </div>
-                 <div class="form-campo">
+                <div class="form-campo">
                     <label for="input-descricao">Descrição:</label>
                     <input type="text" name="input-descricao" id="input-descricao" required>
                 </div>
-                 <div class="form-campo">
+                <div class="form-campo">
                     <label for="input-status">Status:</label>
                     <select name="input-status" id="input-status">
                         <option value="pendente">Pendente</option>
@@ -46,7 +48,8 @@
                 <div class="campo">
                     <h2 class="campo-titulo">Ações</h2>
                     <p><button class="button-editar">Editar</button>
-                    <button class="button-excluir">Excluir</button></p>
+                        <button class="button-excluir">Excluir</button>
+                    </p>
                 </div>
             </section>
 
@@ -65,13 +68,43 @@
                 </div>
                 <div class="campo">
                     <h2 class="campo-titulo">Ações</h2>
-                    <p><button class="button-editar" >Editar</button>
-                    <button class="button-excluir">Excluir</button></p>
+                    <p><button class="button-editar">Editar</button>
+                        <button class="button-excluir">Excluir</button>
+                    </p>
                 </div>
             </section>
         </div>
     </main>
-    <footer><p>Realizado por <a href="">Daniel Alves</a></p></footer>
+    <div class="overlay hidden" id="overlay">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <h2 id="modal-title">Editar tarefa</h2>
+            <form id="form-editar">
+                <div class="form-campo">
+                    <label for="edit-titulo">Tarefa:</label>
+                    <input type="text" id="edit-titulo" required />
+                </div>
+                <div class="form-campo">
+                    <label for="edit-descricao">Descrição:</label>
+                    <input type="text" id="edit-descricao" required />
+                </div>
+                <div class="form-campo">
+                    <label for="edit-status">Status:</label>
+                    <select id="edit-status">
+                        <option value="pendente">Pendente</option>
+                        <option value="completo">Completo</option>
+                    </select>
+                </div>
+                <div class="modal-acoes">
+                    <button type="button" class="btn-cancelar" id="btn-cancelar">Cancelar</button>
+                    <button type="submit" class="btn-salvar" id="btn-salvar">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>Realizado por <a href="">Daniel Alves</a></p>
+    </footer>
     <script src="js/script.js"></script>
 </body>
+
 </html>
