@@ -1,7 +1,218 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap');
+
+
+:root{
+    --cor-extremos: rgb(9, 48, 56);
+    --cor-de-fundo: #8c8c8c;
+    --cor-do-container: #ffffff;
+    
+    --cor-card: #e6e6e6;
+    --cor-linha: rgb(167, 165, 165);
+    --cor-paragrafo: #fafafa;
+
+    --cor-texto: #333;
+
+
+    --cor-botao-nova: #2e7d32;
+    --cor-botao-editar: #f9a825;
+    --cor-botao-excluir: #c62828;
+
+    --fonte-titulo: 'Poppins', sans-serif;
+    --fonte-padrao: 'Inter', sans-serif;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: var(--fonte-padrao);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--cor-extremos);
+    padding: 20px;
+}
+
+header h1 {
+    color: var(--cor-card);
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    text-align: center;
+}
+
 main {
+    flex: 1;
     display: flex;
     justify-content: center;
+    padding: 20px 0px;
+    background-color: var(--cor-de-fundo);
+}
+
+div#container {
+    width: 90%;
+    max-width: 420px;
+    background-color: var(--cor-do-container);
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.363);
+    padding: 20px;
+}
+
+form#form-tarefa {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+form.form-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+form.form-campo label {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--cor-texto);
+}
+
+.form-campo input, .form-campo textarea, .form-campo select{
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #bdbdbd;
+    font-size: 15px;
+    background-color: var(--cor-card);
+    color: var(--cor-texto);
+}
+
+.form-campo textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+.form-campo input:focus, .form-campo textarea:focus, .form-campo select:focus {
+    outline: none;
+    border-color: var(--cor-extremos);
+}
+
+form#form-tarefa button#button-tarefa {
+    margin-top: 10px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--cor-botao-nova);
+    color: var(--cor-card);
+}
+
+form#form-tarefa button#button-tarefa:active{
+    transform: scale(0.98)
+}
+
+
+section.tarefa {
+    background-color: var(--cor-card);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+section.tarefa:last-child {
+    margin-bottom: 0;
+}
+
+div#input-button{
+    margin-bottom: 20px;
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+div#input-button input {
+    flex: 1;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+div#input-button button {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+div.campo {
+    margin-bottom: 16px;
+}
+
+.campo-titulo {
+    font-weight: 600;
+    font-family: var(--fonte-padrao);
+    font-size: 18px;
+    letter-spacing: 0.3px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    color: var(--cor-texto);
+    background-color: var(--cor-linha);
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+div.campo p {
+    display: flex;
+    font-family: var(--fonte-padrao);
+    font-weight: 400;
+    gap: 10px;
     align-items: center;
+    background-color: var(--cor-paragrafo);
+    padding: 8px;
+    border-radius: 6px;
+}
+
+div.campo p button {
+    margin-right: 8px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button {
+    font-family: var(--fonte-padrao);
+    font-weight: 500;
+}
+
+button.button-editar {
+    background-color: var(--cor-botao-editar);
+    color: var(--cor-card);
+}
+
+button.button-excluir{
+    background-color: var(--cor-botao-excluir);
+    color: var(--cor-card);
+}
+
+footer{
+    background-color: var(--cor-extremos);
+    padding: 20px;
+}
+
+footer p {
+    text-align: center;
+    color: var(--cor-card);
+    font-size: 20px;
+}
+
+footer a {
+    color: var(--cor-card);
+    text-decoration: none;
+    font-weight: bolder;
 }

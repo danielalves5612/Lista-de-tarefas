@@ -12,16 +12,66 @@
     </header>
     <main>
         <div id="container">
-            <button id="botao-task">Nova Tarefa</button>
-            <ul>
-                <li>
-                    <span>Tarefa</span>
-                    <span>Status</span>
-                    <span>Ações</span>
-                </li>
-            </ul>
+            <form action="#" id="form-tarefa">
+                <div class="form-campo">
+                    <label for="input-titulo">Tarefa:</label>
+                    <input type="text" name="input-titulo" id="input-titulo" required>
+                </div>
+                 <div class="form-campo">
+                    <label for="input-descricao">Descrição:</label>
+                    <input type="text" name="input-descricao" id="input-descricao" required>
+                </div>
+                 <div class="form-campo">
+                    <label for="input-status">Status:</label>
+                    <select name="input-status" id="input-status">
+                        <option value="pendente">Pendente</option>
+                        <option value="completo">Completo</option>
+                    </select>
+                </div>
+                <button type="submit" id="button-tarefa">Nova Tarefa</button>
+            </form>
+            <section class="tarefa">
+                <div class="campo">
+                    <h2 class="campo-titulo">Tarefa</h2>
+                    <p>Estudar JS</p>
+                </div>
+                <div class="campo">
+                    <h2 class="campo-titulo">Descrição</h2>
+                    <p>Arrays e DOM</p>
+                </div>
+                <div class="campo">
+                    <h2 class="campo-titulo">Status</h2>
+                    <p>Completo</p>
+                </div>
+                <div class="campo">
+                    <h2 class="campo-titulo">Ações</h2>
+                    <p><button class="button-editar">Editar</button>
+                    <button class="button-excluir">Excluir</button></p>
+                </div>
+            </section>
+
+            <section class="tarefa">
+                <div class="campo">
+                    <h2 class="campo-titulo">Tarefa</h2>
+                    <p>Estudar JS</p>
+                </div>
+                <div class="campo">
+                    <h2 class="campo-titulo">Descrição</h2>
+                    <p>Arrays e DOM</p>
+                </div>
+                <div class="campo">
+                    <h2 class="campo-titulo">Status</h2>
+                    <p>Completo</p>
+                </div>
+                <div class="campo">
+                    <h2 class="campo-titulo">Ações</h2>
+                    <p><button class="button-editar" >Editar</button>
+                    <button class="button-excluir">Excluir</button></p>
+                </div>
+            </section>
         </div>
     </main>
+    <footer><p>Realizado por <a href="">Daniel Alves</a></p></footer>
     <script src="js/script.js"></script>
 </body>
 </html>
