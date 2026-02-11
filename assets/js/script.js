@@ -20,7 +20,7 @@ function criaTarefa(tituloValor, descricaoValor, statusValor){
     container.appendChild(section)
     criaCampo(section, 'Tarefa', tituloValor, 'titulo')
     criaCampo(section, 'Descrição', descricaoValor, 'descricao')
-    criaCampo(section, 'Status', statusValor, 'status')
+    criaCampo(section, 'Status', primeiraMaiuscula(statusValor), 'status')
     criaAcoes(section)
 }
 
@@ -48,10 +48,12 @@ function criaAcoes(section, titulo){
     const pAcao = document.createElement('p')
     divAcao.appendChild(pAcao)
     const botaoEditar = document.createElement('button')
+    botaoEditar.type = 'button'
     botaoEditar.setAttribute('class', 'button-editar')
     botaoEditar.innerHTML = 'Editar'
     pAcao.appendChild(botaoEditar)
     const botaoApagar = document.createElement('button')
+    botaoApagar.type = 'button'
     botaoApagar.setAttribute('class', 'button-excluir')
     botaoApagar.innerHTML = 'Excluir'
     pAcao.appendChild(botaoApagar)
@@ -63,6 +65,11 @@ function abrirModal(){
 
 function fecharModal(){
     overlay.classList.add('hidden')
+}
+
+function primeiraMaiuscula(texto){
+    return texto[0].toUpperCase() +
+    texto.slice(1)
 }
 
 document.addEventListener('click', function(e){
@@ -105,6 +112,6 @@ formEditar.addEventListener('submit', function(e){
     const statusEditado = tarefaEmEdicao.querySelector('.campo--status p')
     tituloEditado.innerText = editTitulo.value
     descricaoEditado.innerText = editDescricao.value
-    statusEditado.innerText = editStatus.value
+    statusEditado.innerText = primeiraMaiuscula(editStatus.value)
     fecharModal()
 })
