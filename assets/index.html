@@ -32,47 +32,19 @@
                 </div>
                 <button type="submit" id="button-tarefa">Nova Tarefa</button>
             </form>
-            <section class="tarefa">
-                <div class="campo campo--titulo">
-                    <h2 class="campo-titulo">Tarefa</h2>
-                    <p>Estudar JS</p>
-                </div>
-                <div class="campo campo--descricao">
-                    <h2 class="campo-titulo">Descrição</h2>
-                    <p>Arrays e DOM</p>
-                </div>
-                <div class="campo campo--status">
-                    <h2 class="campo-titulo">Status</h2>
-                    <p>Completo</p>
-                </div>
-                <div class="campo">
-                    <h2 class="campo-titulo">Ações</h2>
-                    <p><button class="button-editar">Editar</button>
-                        <button class="button-excluir">Excluir</button>
-                    </p>
-                </div>
-            </section>
-
-            <section class="tarefa">
-                <div class="campo campo--titulo">
-                    <h2 class="campo-titulo">Tarefa</h2>
-                    <p>Estudar JS</p>
-                </div>
-                <div class="campo campo--descricao">
-                    <h2 class="campo-titulo">Descrição</h2>
-                    <p>Arrays e DOM</p>
-                </div>
-                <div class="campo campo--status">
-                    <h2 class="campo-titulo">Status</h2>
-                    <p>Completo</p>
-                </div>
-                <div class="campo">
-                    <h2 class="campo-titulo">Ações</h2>
-                    <p><button class="button-editar">Editar</button>
-                        <button class="button-excluir">Excluir</button>
-                    </p>
-                </div>
-            </section>
+            <div id="resumo">
+                <span id="cont-total">Total: 0</span>
+                <span id="cont-pendentes">Pendentes: 0</span>
+                <span id="cont-completas">Completas: 0</span>
+            </div>
+            <div id="tabela-head" aria-hidden="true">
+                <div>Data</div>
+                <div>Tarefa</div>
+                <div>Descrição</div>
+                <div>Status</div>
+                <div>Ações</div>
+            </div>
+            <div id="lista-tarefas"></div>
         </div>
     </main>
     <div class="overlay hidden" id="overlay">
