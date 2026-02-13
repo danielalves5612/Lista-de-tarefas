@@ -134,6 +134,7 @@ main{
   padding: 14px;
   color: var(--cor-texto);
   margin-top: 12px;
+  text-align: center;
 }
 
 #lista-tarefas{
