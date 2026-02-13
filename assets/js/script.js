@@ -96,7 +96,7 @@ function criarAcoes(section){
   btnToggle.type = 'button'
   btnToggle.className = 'button-toggle'
   const isCompleto = section.classList.contains('tarefa--completo')
-  btnToggle.textContent = isCompleto ? 'Desfaz' : 'Feito'
+  btnToggle.textContent = isCompleto ? 'Voltar' : 'Concluir'
 
   p.append(btnEditar, btnExcluir, btnToggle)
   div.append(h2, p)
@@ -228,7 +228,7 @@ document.addEventListener('click', (e) => {
       pStatus.classList.add(`status--${novoStatus}`)
     }
 
-    el.textContent = (novoStatus === 'completo') ? 'Desfaz' : 'Feito'
+    el.textContent = (novoStatus === 'completo') ? 'Voltar' : 'Concluir'
 
     salvarTarefas()
     atualizarContador()
@@ -298,7 +298,7 @@ formEditar.addEventListener('submit', (e) => {
   }
 
   if(toggleBtn){
-    toggleBtn.textContent = (novoStatus === 'completo') ? 'Desfaz' : 'Feito'
+    toggleBtn.textContent = (novoStatus === 'completo') ? 'Voltar' : 'Concluir'
   }
 
   fecharModal()
