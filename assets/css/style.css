@@ -331,6 +331,24 @@ button.button-excluir{
     color: #fff; 
 }
 
+.vazio{
+    margin: 12px 0 0;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: var(--cor-card);
+    color: var(--cor-texto);
+    text-align: center;
+    font-weight: 600;
+}
+
+.hidden{
+    display: none;
+}
+
+#tabela-head{
+    display: none;
+}
+
 footer{
     background-color: var(--cor-extremos);
     padding: 20px;
@@ -363,9 +381,9 @@ footer a {
 
   #tabela-head{
     display: grid;
-    grid-template-columns: 140px 1.1fr 1.6fr 160px 260px;
-    gap: 10px;
-    padding: 12px 12px;
+    grid-template-columns: 140px 1.1fr 1.6fr 160px 324px;
+    gap: 12px;
+    padding: 12px;
     border-radius: 10px;
     background: var(--cor-linha);
     font-weight: 700;
@@ -378,33 +396,37 @@ footer a {
 
   section.tarefa{
     display: grid;
-    grid-template-columns: 140px 1.1fr 1.6fr 160px 260px;
-    gap: 10px;
-    align-items: start;
+    grid-template-columns: 150px 1.2fr 1.8fr 140px 324px;
+    gap: 12px;
+    align-items: stretch;
     background: var(--cor-paragrafo);
     border-left: 6px solid transparent;
     padding: 12px;
+    border-radius: 10px;
   }
 
+  /* Data */
   section.tarefa .tarefa-data{
     margin: 0;
     padding: 10px 12px;
     border-radius: 8px;
     background: var(--cor-card);
     font-size: 12px;
-    align-self: stretch;
     display: flex;
     align-items: center;
+    height: 100%;
+    line-height: 1.2;
+    opacity: 0.85;
+  }
+
+  /* Remove os títulos internos no desktop */
+  section.tarefa .campo-titulo{
+    display: none;
   }
 
   section.tarefa .campo{
     margin: 0;
   }
-
-  section.tarefa .campo-titulo{
-    display: none;
-  }
-
 
   section.tarefa .campo p{
     margin: 0;
@@ -412,19 +434,27 @@ footer a {
     padding: 10px 12px;
     border-radius: 8px;
     background: var(--cor-card);
+    display: flex;
     align-items: center;
   }
 
+  /* Ações */
   section.tarefa .campo:last-child p{
+    display: flex;
     justify-content: flex-start;
-    gap: 10px;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap; /* nunca quebrar linha */
   }
 
+  /* Botões tamanho consistente */
   .button-editar,
   .button-excluir,
   .button-toggle{
-    padding: 10px 12px;
+    padding: 8px 10px;
     border-radius: 8px;
+    min-width: 90px;      /* impede variação de largura */
+    white-space: nowrap;  /* impede quebra de texto */
+    text-align: center;
   }
 }

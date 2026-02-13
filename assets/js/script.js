@@ -98,6 +98,8 @@ function atualizarContador(){
   contTotal.textContent = `Total: ${tarefas.length}`
   contPendentes.textContent = `Pendentes: ${pendentes}`
   contCompletas.textContent = `Completas: ${completas}`
+  const vazio = document.querySelector('#vazio')
+  vazio.classList.toggle('hidden', document.querySelectorAll('section.tarefa').length > 0)
 }
 
 
