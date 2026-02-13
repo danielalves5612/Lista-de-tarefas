@@ -1,83 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Tarefas</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Tarefas</title>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 
 <body>
-    <header>
-        <h1>Lista de Tarefas</h1>
-    </header>
-    <main>
-        <div id="container">
-            <form action="#" id="form-tarefa">
-                <div class="form-campo">
-                    <label for="input-titulo">Tarefa:</label>
-                    <input type="text" name="input-titulo" id="input-titulo" required>
-                </div>
-                <div class="form-campo">
-                    <label for="input-descricao">Descrição:</label>
-                    <input type="text" name="input-descricao" id="input-descricao" required>
-                </div>
-                <div class="form-campo">
-                    <label for="input-status">Status:</label>
-                    <select name="input-status" id="input-status">
-                        <option value="pendente">Pendente</option>
-                        <option value="completo">Completo</option>
-                    </select>
-                </div>
-                <button type="submit" id="button-tarefa">Nova Tarefa</button>
-            </form>
-            <div id="resumo">
-                <span id="cont-total">Total: 0</span>
-                <span id="cont-pendentes">Pendentes: 0</span>
-                <span id="cont-completas">Completas: 0</span>
-            </div>
-            <div id="tabela-head" aria-hidden="true">
-                <div>Data</div>
-                <div>Tarefa</div>
-                <div>Descrição</div>
-                <div>Status</div>
-                <div>Ações</div>
-            </div>
-            <p id="vazio" class="vazio">Nenhuma tarefa ainda. Crie a primeira.</p>
-            <div id="lista-tarefas"></div>
-        </div>
-    </main>
-    <div class="overlay hidden" id="overlay">
-        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-            <h2 id="modal-title">Editar tarefa</h2>
-            <form id="form-editar">
-                <div class="form-campo">
-                    <label for="edit-titulo">Tarefa:</label>
-                    <input type="text" id="edit-titulo" required />
-                </div>
-                <div class="form-campo">
-                    <label for="edit-descricao">Descrição:</label>
-                    <input type="text" id="edit-descricao" required />
-                </div>
-                <div class="form-campo">
-                    <label for="edit-status">Status:</label>
-                    <select id="edit-status">
-                        <option value="pendente">Pendente</option>
-                        <option value="completo">Completo</option>
-                    </select>
-                </div>
-                <div class="modal-acoes">
-                    <button type="button" class="btn-cancelar" id="btn-cancelar">Cancelar</button>
-                    <button type="submit" class="btn-salvar" id="btn-salvar">Salvar</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <footer>
-        <p>Realizado por <a href="">Daniel Alves</a></p>
-    </footer>
-    <script src="js/script.js"></script>
-</body>
+  <header>
+    <h1>Lista de Tarefas</h1>
+  </header>
 
+  <main>
+    <div id="container">
+
+      <form id="form-tarefa" autocomplete="off" novalidate>
+        <div class="form-campo">
+          <label for="input-titulo">Tarefa:</label>
+          <input type="text" id="input-titulo" required />
+        </div>
+
+        <div class="form-campo">
+          <label for="input-descricao">Descrição:</label>
+          <input type="text" id="input-descricao" required />
+        </div>
+
+        <div class="form-campo">
+          <label for="input-status">Status:</label>
+          <select id="input-status">
+            <option value="pendente">Pendente</option>
+            <option value="completo">Completo</option>
+          </select>
+        </div>
+
+        <button type="submit" id="button-tarefa">Nova Tarefa</button>
+      </form>
+
+      <div id="resumo" aria-live="polite">
+        <span id="cont-total">Total: 0</span>
+        <span id="cont-pendentes">Pendentes: 0</span>
+        <span id="cont-completas">Completas: 0</span>
+      </div>
+
+      <div id="tabela-head" aria-hidden="true">
+        <span>Data</span>
+        <span>Tarefa</span>
+        <span>Descrição</span>
+        <span>Status</span>
+        <span>Ações</span>
+      </div>
+
+      <p id="empty-state" class="empty-state hidden">
+        Nenhuma tarefa ainda.
+      </p>
+
+      <div id="lista-tarefas"></div>
+    </div>
+  </main>
+
+  <div class="overlay hidden" id="overlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h2 id="modal-title">Editar tarefa</h2>
+
+      <form id="form-editar" novalidate>
+        <div class="form-campo">
+          <label for="edit-titulo">Tarefa:</label>
+          <input type="text" id="edit-titulo" required />
+        </div>
+
+        <div class="form-campo">
+          <label for="edit-descricao">Descrição:</label>
+          <input type="text" id="edit-descricao" required />
+        </div>
+
+        <div class="form-campo">
+          <label for="edit-status">Status:</label>
+          <select id="edit-status">
+            <option value="pendente">Pendente</option>
+            <option value="completo">Completo</option>
+          </select>
+        </div>
+
+        <div class="modal-acoes">
+          <button type="button" class="btn-cancelar" id="btn-cancelar">Cancelar</button>
+          <button type="submit" class="btn-salvar" id="btn-salvar">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>Realizado por <a href="#">Daniel Alves</a></p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
 </html>
