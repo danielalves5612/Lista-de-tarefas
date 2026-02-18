@@ -62,15 +62,21 @@ A aplicação permite criar, editar, excluir e marcar tarefas como concluídas, 
 
 ---
 
+## 📱 Responsividade
+O projeto foi desenvolvido utilizando a abordagem Mobile First, 
+priorizando a experiência em dispositivos móveis e adaptando o layout 
+para telas maiores com CSS.
+A aplicação é totalmente responsiva e funciona corretamente em diferentes tamanhos de tela.
+
 ## 📷 Preview
 
 Desktop: 
 
-![alt text](image.png)
+![alt text](assets/img/image.png)
 
 Mobile:
 
-![alt text](image-1.png)
+![alt text](assets/img/image-1.png)
 
 ---
 
